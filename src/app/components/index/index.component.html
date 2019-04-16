@@ -3,6 +3,7 @@
     <tr>
       <td>Nombre</td>
       <td>Precio</td>
+      <td>Moneda</td>
       <td colspan="2">Acciones</td>
     </tr>
   </thead>
@@ -11,6 +12,7 @@
     <tr *ngFor="let adunit of adunits">
       <td>{{ adunit.unit_name }}</td>
       <td>{{ adunit.unit_price }}</td>
+      <td>{{ adunit.unit_currency }}</td>
       <td><a [routerLink]="['/edit', adunit._id]" class="btn btn-primary">Editar</a></td>
       <td><button (click)="deleteAdUnit(adunit._id)" class="btn btn-danger">Borrar</button></td>
     </tr>

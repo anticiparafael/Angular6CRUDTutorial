@@ -17,6 +17,7 @@
         <label class="col-md-4">Precio</label>
         <input type="text" class="form-control" name="unit_price" formControlName="unit_price" #unit_price [(ngModel)] = "adunit.unit_price"/>
       </div>
+
       <div *ngIf="angForm.controls['unit_price'].invalid && (angForm.controls['unit_price'].dirty || angForm.controls['unit_price'].touched)" class="alert alert-danger">
         <div *ngIf="angForm.controls['unit_price'].errors.required">
           Precio del producto es requerido.

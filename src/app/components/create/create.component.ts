@@ -18,12 +18,14 @@ export class CreateComponent implements OnInit {
   createForm() {
     this.angForm = this.fb.group({
       unit_name: ['', Validators.required ],
-      unit_price: ['', Validators.required ]
+      unit_price: ['', Validators.required ],
+      unit_currency: ['', Validators.required ]
    });
   }
 
-  addAdUnit(unit_name, unit_price) {
-    this.adunitservice.addAdUnit(unit_name, unit_price);
+  addAdUnit(unit_name, unit_price, unit_currency) {
+    console.log(unit_currency);
+    this.adunitservice.addAdUnit(unit_name, unit_price, unit_currency);
 }
   ngOnInit() {
   }

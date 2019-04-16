@@ -21,8 +21,13 @@
         </div>
       </div>
       <div class="form-group">
-        <button (click)="addAdUnit(unit_name.value, unit_price.value)" [disabled]="angForm.pristine || angForm.invalid" class="btn btn-primary">Crear Producto</button>
+          <label class="col-md-4">Moneda</label>
+          <input type="text" class="form-control" name="unit_currency" formControlName="unit_currency" #unit_currency/>
+        </div>
+      <div class="form-group">
+        <button (click)="addAdUnit(unit_name.value, unit_price.value, unit_currency.value)" [disabled]="angForm.pristine || angForm.invalid" class="btn btn-primary">Crear Producto</button>
       </div>
+      
     </form>
   </div>
 </div>
