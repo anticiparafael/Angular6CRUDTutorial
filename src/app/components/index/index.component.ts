@@ -24,6 +24,9 @@ export class IndexComponent implements OnInit {
       .getAdUnits()
       .subscribe((data: AdUnit[]) => {
       this.adunits = data;
+      // this.adunits[0]
+      console.log('unit 0', this.adunits[0]);
+      
     });
   }
 }

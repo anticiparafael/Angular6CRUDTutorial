@@ -4,24 +4,50 @@
     <form [formGroup]="angForm" novalidate>
       <div class="form-group">
         <label class="col-md-4">Nombre</label>
-        <input type="text" class="form-control" name="unit_name" formControlName="unit_name" #unit_name/>
+        <input type="text" class="form-control" name="unit_name" formControlName="unit_name" #unit_name />
       </div>
-      <div *ngIf="angForm.controls['unit_name'].invalid && (angForm.controls['unit_name'].dirty || angForm.controls['unit_name'].touched)" class="alert alert-danger">
+      <div
+        *ngIf="angForm.controls['unit_name'].invalid && (angForm.controls['unit_name'].dirty || angForm.controls['unit_name'].touched)"
+        class="alert alert-danger">
         <div *ngIf="angForm.controls['unit_name'].errors.required">
           Nombre del producto es requerido
         </div>
       </div>
       <div class="form-group">
         <label class="col-md-4">Precio</label>
-        <input type="text" class="form-control" name="unit_price" formControlName="unit_price" #unit_price/>
+        <input type="text" OnlyNumber="true" class="form-control" name="unit_price" formControlName="unit_price"
+          #unit_price />
       </div>
-      <div *ngIf="angForm.controls['unit_price'].invalid && (angForm.controls['unit_price'].dirty || angForm.controls['unit_price'].touched)" class="alert alert-danger">
+      <div
+        *ngIf="!angForm.controls['unit_price'].valid && (angForm.controls['unit_price'].dirty || angForm.controls['unit_price'].touched)"
+        class="alert alert-warning">
+        <small>Solo acepta numeros</small>
+      </div>
+      <div
+        *ngIf="angForm.controls['unit_price'].invalid && (angForm.controls['unit_price'].dirty || angForm.controls['unit_price'].touched)"
+        class="alert alert-danger">
         <div *ngIf="angForm.controls['unit_price'].errors.required">
           Precio del producto es requerido.
         </div>
       </div>
       <div class="form-group">
-        <button (click)="addAdUnit(unit_name.value, unit_price.value)" [disabled]="angForm.pristine || angForm.invalid" class="btn btn-primary">Crear Producto</button>
+        <label class="col-md-4">Moneda</label>
+        <select class="form-control" name="unit_currency_symbol" formControlName="unit_currency_symbol"
+          #unit_currency_symbol>
+          <option value="$">$</option>
+          <option value="€">€</option>
+        </select>
+      </div>
+      <div
+        *ngIf="angForm.controls['unit_currency_symbol'].invalid && (angForm.controls['unit_currency_symbol'].dirty || angForm.controls['unit_currency_symbol'].touched)"
+        class="alert alert-danger">
+        <div *ngIf="angForm.controls['unit_currency_symbol'].errors.required">
+          Moneda del producto es requerido.
+        </div>
+      </div>
+      <div class="form-group">
+        <button (click)="addAdUnit()" [disabled]="angForm.pristine || angForm.invalid"
+          class="btn btn-primary">Crear Producto</button>
       </div>
     </form>
   </div>

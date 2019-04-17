@@ -11,6 +11,7 @@ import { IndexComponent } from './components/index/index.component';
 import { EditComponent } from './components/edit/edit.component';
 
 import { AdunitService } from './adunit.service';
+import { OnlyNumbersDirective } from './directives/only-numbers.directive';
 
 const routes: Routes = [
   {
@@ -33,6 +34,7 @@ const routes: Routes = [
     CreateComponent,
     IndexComponent,
     EditComponent,
+    OnlyNumbersDirective,
   ],
   imports: [
     BrowserModule,

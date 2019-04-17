@@ -10,6 +10,9 @@ let AdUnit = new Schema({
   },
   unit_price: {
     type: Number
+  },
+  unit_currency_symbol: {
+    type: String
   }
 },{
     collection: 'adunits'
